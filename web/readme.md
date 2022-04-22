@@ -1,2 +1,2 @@
 # back-end
-- tentando fazer algo interessante python e websockets
+- tentando fazer algo interessante com python e websockets
