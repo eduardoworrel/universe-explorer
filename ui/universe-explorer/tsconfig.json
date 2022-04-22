@@ -1,0 +1,19 @@
+{
+  "include": ["src/*.ts", "main.ts", "src/Move/main.ts"],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noEmitOnError": false,
+    "alwaysStrict": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "target": "ES2018",
+    "module": "esnext",
+    "lib": ["ES2018", "DOM"]
+  }
+}

@@ -1,0 +1,106 @@
+body {
+    background-color: #383838;
+    padding: 0;
+    margin: 0;
+    overflow: hidden; /* Hide scrollbars */
+}
+span {
+    top: 0px;
+}
+#game-started{
+    width: 2800px;
+    height: 2800px;
+    background-image: url('../images/space-elements/space.png');
+    background-size: 60%;
+    display: none;
+}
+#secure-zone div{
+    margin-top: 200px;
+    font-size: 6em;
+    color: #47cd38;
+}
+#secure-zone{
+    text-align: center;
+    box-shadow: 4px 4px 42px -10px black;
+    border-radius: 15px;
+    border: 5px solid #2c2c2c;
+    width: 800px;
+    height: 600px;
+    background-color: #959595d4;
+    display: absolute;
+    margin: 10px;
+}
+
+#terra{
+    position: absolute;
+    top:700px;
+    left: 800px;
+    width: 200px;
+    height: 200px;
+    background-image: url('../images/space-elements/terra.gif');
+    background-size: 100%;
+}
+
+#lua{
+    position: absolute;
+    top:900px;
+    left: 800px;
+    width: 70px;
+    height: 70px;
+    background-image: url('../images/space-elements/lua.gif');
+    background-size: 100%;
+}
+
+
+#estrela{
+    position: absolute;
+    top:1200px;
+    left: 1000px;
+    width: 600px;
+    height: 600px;
+    background-image: url('../images/space-elements/estrela.gif');
+    background-size: 100%;
+}
+#chat{
+    z-index: 99;
+    display: none;
+    filter: opacity(0.9);
+    background-color: whitesmoke;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 400px;
+    height: 600px;
+    box-shadow: 4px 4px 42px -10px black;
+    border-radius: 15px;
+}
+#form{
+    width: 100%;
+    bottom: 0;
+    position: absolute; 
+}
+#form input{
+
+    width: 80%;
+    height: 55px;
+    float: left;
+}
+#form button{
+    width: 18%;
+    float: left;
+    height: 55px;
+}
+#messages{
+    padding: 10px;
+}
+.legenda{
+    word-break: break-word;
+    display: block;
+    text-align: center;
+    width: 100px;
+    background-color: #ffffffbf;
+    border-radius: 5px;
+    position: relative;
+    top: 73px;
+    left: -20px;
+}
