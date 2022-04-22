@@ -17,7 +17,6 @@ export default class Move {
     if (!area) throw new Error("O elemeno 'area' é obrigatório");
 
     const joystickDiv = document.createElement('div');
-    joystickDiv.style.pointerEvents = 'none';
     joystickDiv.style.position = 'fixed';
     joystickDiv.style.width = '100vw';
     joystickDiv.style.height = '100vh';
