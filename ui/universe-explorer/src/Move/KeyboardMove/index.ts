@@ -14,6 +14,7 @@ export default class Move {
     keyboard.style.position = 'fixed';
     keyboard.style.bottom = '3%';
     keyboard.style.left = '3%';
+    keyboard.style.pointerEvents = 'none';
 
     keyboard.innerHTML = `
       <button class="kbc-button up" 
