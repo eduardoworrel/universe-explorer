@@ -54,8 +54,16 @@ export default class Friends {
     inimigo: HTMLSpanElement,
   ) {
     inimigo
-      .animate([{ left: personagem.x + 'px' }, { top: personagem.y + 'px' }], {
-        duration: 5000,
+      .animate([{ left: personagem.x + 'px' }], {
+        duration: 1000,
+        iterations: 1,
+        fill: 'forwards',
+      })
+
+      .commitStyles();
+    inimigo
+      .animate([{ top: personagem.y + 'px' }], {
+        duration: 1000,
         iterations: 1,
         fill: 'forwards',
       })
