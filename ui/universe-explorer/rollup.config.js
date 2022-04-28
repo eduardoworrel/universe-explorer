@@ -7,9 +7,9 @@ export default {
   input: ['src/main.ts'],
   output: [
     {
-      file: 'dist/move.js',
+      file: 'dist/main.js',
       format: 'cjs',
-      name: 'Move',
+      name: 'main',
     },
   ],
  plugins: [

@@ -10,7 +10,7 @@ span {
 #game-started{
     width: 2800px;
     height: 2800px;
-    background-image: url('../images/space-elements/space.png');
+    background-image: url('../asstes/images/space-elements/space.png');
     background-size: 60%;
     display: none;
 }
@@ -37,7 +37,7 @@ span {
     left: 800px;
     width: 200px;
     height: 200px;
-    background-image: url('../images/space-elements/terra.gif');
+    background-image: url('../asstes/images/space-elements/terra.gif');
     background-size: 100%;
 }
 
@@ -47,7 +47,7 @@ span {
     left: 800px;
     width: 70px;
     height: 70px;
-    background-image: url('../images/space-elements/lua.gif');
+    background-image: url('../asstes/images/space-elements/lua.gif');
     background-size: 100%;
 }
 
@@ -58,7 +58,7 @@ span {
     left: 1000px;
     width: 600px;
     height: 600px;
-    background-image: url('../images/space-elements/estrela.gif');
+    background-image: url('../asstes/images/space-elements/estrela.gif');
     background-size: 100%;
 }
 #chat{
