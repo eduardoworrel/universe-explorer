@@ -3,8 +3,8 @@ export const position = {
   horizontal: 500,
 };
 export const defaultSize = {
-  width: 150,
-  height: 150,
+  width: 100,
+  height: 100,
 };
 export const limit = {
   maxX: 3000 - defaultSize.width,
@@ -14,6 +14,6 @@ export const limit = {
 };
 export const speed = {
   unit: 'px',
-  distance: 7,
-  ms: 30,
+  distance: 3,
+  ms: 20,
 };
