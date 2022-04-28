@@ -19,7 +19,7 @@ export class Planet{
     earthImg: string;
     moon: any;
     constructor(name: any, widthFactor: any, heightFactor: any, radius: any, angle: any,massReference : number) { 
-        this.earthImg = "assets/images/space-elements/terra.gif";
+        this.earthImg = "assets/images/space-elements/slow-earth.gif";
   
         this.name = name;
         this.widthFactor = widthFactor;
