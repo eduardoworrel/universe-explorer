@@ -17,15 +17,22 @@
         body{
             margin: 0;
         }
-       
         #realcontent{
             pointer-events: none;
-       
+            zoom:130%;
             width: 3000px;
             height: 3000px;
             background-size: 60%;
             background-image: url('./assets/images/space-elements/space.png');
         }
+        @media (max-width: 600px)
+{
+        #realcontent{
+            zoom:80%;
+
+        }
+}
+        
         #area{
             -ms-overflow-style: none; /* for Internet Explorer, Edge */
             scrollbar-width: none; /* for Firefox */
