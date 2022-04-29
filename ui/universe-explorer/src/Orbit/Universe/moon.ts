@@ -1,5 +1,4 @@
 import { getAngSpeed } from './config/consts';
-const spacing = 100;
 export class Moon {
   radius: any;
   width: any;
@@ -11,12 +10,12 @@ export class Moon {
   angle: any;
   angSpeed: any;
   mass: number;
-  constructor(widthFactor: any, heightFactor: any, angle: any, massReference: number) {
+  constructor(widthFactor: any, heightFactor: any, angle: any, massReference: number, distancia: number) {
     this.angle = angle;
-    this.angSpeed = getAngSpeed(spacing * 3, massReference);
+    this.angSpeed = getAngSpeed(distancia, massReference * 2);
     this.width = widthFactor;
     this.height = heightFactor;
-    this.radius = spacing * 4;
+    this.radius = distancia;
     this.mass = this.width * this.height;
 
     const moon = document.createElement('img');

@@ -18,8 +18,9 @@ export class Planet {
   space: number;
   earthImg: string;
   moon: any;
-  constructor(name: any, widthFactor: any, heightFactor: any, radius: any, angle: any, massReference: number) {
-    this.earthImg = 'assets/images/space-elements/slow-earth.gif';
+  moons : Moon[] = [];
+  constructor(name: any, widthFactor: any, heightFactor: any, radius: any, angle: any, massReference: number, theImg:string) {
+    this.earthImg = theImg;
 
     this.name = name;
     this.widthFactor = widthFactor;
@@ -44,15 +45,20 @@ export class Planet {
     img.style.position = 'absolute';
     this.element = img;
 
-    this.moon = new Moon(90, 90, this.angle, this.mass);
-
     setInterval(() => {
       this.angle += this.angSpeed;
       this.x = 2850 / 2 + Math.cos(this.angle) * this.radius;
       this.y = 2850 / 2 - Math.sin(this.angle) * this.radius;
       this.element.style.left = `${this.x}px`;
       this.element.style.top = `${this.y}px`;
-      this.moon.update(this.x, this.y);
+      for(let moon of this.moons){
+        moon.update(this.x, this.y);
+      }
     }, 50);
+  }
+  addMoon(largura: any, altura: any, angle: any, distancia: number ){
+    let moon = new Moon(largura, altura, angle, this.mass, distancia);
+    this.moons.push(moon);
+    return moon.element;
   }
 }

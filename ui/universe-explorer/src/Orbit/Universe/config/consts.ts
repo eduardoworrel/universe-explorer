@@ -1,4 +1,4 @@
-const G = 0.04;
+const G = 0.2;
 
 export function getAngSpeed(distanceFromReference: number, massReference: number) {
   let mu = G * massReference;

@@ -10,7 +10,7 @@ export default class Universe {
 
   usePlanetGrav = false;
   useCollisions = false;
-  planetScale = 2;
+  planetScale = 1;
   launchVel = 10;
   sun: Sun;
   sunImg: HTMLImageElement;
@@ -28,11 +28,26 @@ export default class Universe {
     this.loadImages();
     this.drawStaticSun();
 
-    let planet = new Planet('Earth', 250, 250, this.spacing * 9, 0, this.sun.mass);
+    let planet = new Planet('Earth', 150, 150, this.spacing * 7.5, 150, this.sun.mass,'assets/images/space-elements/slow-earth.gif');
     this.planets.push(planet);
     this.space.append(planet.element);
-    this.space.append(planet.moon.element);
+    this.space.append(planet.addMoon(40, 40, 50,this.spacing * 2));
+
+    planet = new Planet('1', 60, 60, this.spacing * 3, 0, this.sun.mass,'assets/images/space-elements/dry.gif');
     this.planets.push(planet);
+    this.space.append(planet.element);
+    this.space.append(planet.addMoon(20, 20, 50,this.spacing * 0.5));
+
+
+    planet = new Planet('2', 360, 360, this.spacing * 12, 0, this.sun.mass,'assets/images/space-elements/buraco-negro.gif');
+    this.planets.push(planet);
+    this.space.append(planet.element);
+
+    planet = new Planet('3', 360, 360, this.spacing * 12, 800, this.sun.mass,'assets/images/space-elements/gigant.gif');
+    this.planets.push(planet);
+    this.space.append(planet.element);
+    this.space.append(planet.addMoon(50, 50, 50,this.spacing * 1.7));
+    this.space.append(planet.addMoon(70, 70, 150,this.spacing * 2));
   }
 
   drawStaticSun() {
