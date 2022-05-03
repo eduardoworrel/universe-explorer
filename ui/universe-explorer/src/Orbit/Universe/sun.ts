@@ -14,7 +14,9 @@ export class Sun {
     this.x = (3000 - this.width) / 2;
     this.y = (3000 - this.height) / 2;
     this.img = sunImg;
-
+    sunImg.classList.add('trigger');
+    sunImg.setAttribute("show",'sun');
+    
     sunImg.style.width = `${this.width}px`;
     sunImg.style.height = `${this.height}px`;
     sunImg.style.left = `${this.x}px`;

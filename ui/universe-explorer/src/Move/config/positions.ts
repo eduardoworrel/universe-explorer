@@ -14,6 +14,6 @@ export const limit = {
 };
 export const speed = {
   unit: 'px',
-  distance: 3,
+  distance: 5,
   ms: 20,
 };

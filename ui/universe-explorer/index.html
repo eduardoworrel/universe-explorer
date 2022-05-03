@@ -46,14 +46,35 @@
            
             display: none; /* for Chrome, Safari, and Opera */
         }
-
+        #interactive-content{
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 55%;
+            height: 20%;
+            pointer-events: none;
+            display: none;
+            background: rgb(255 255 255);
+            padding: 10px;
+            border-radius: 15px;
+        }
+        #sun{
+            display: none;
+        }
+        #sun iframe {
+            height: 100%;
+        }
     </style>
 </head>
 <body>
     <div id="area">
         <div id="realcontent" >
-           
-        </div>
+       </div>
+       <div id="interactive-content">
+           <div id="sun">
+            <iframe width="100%"src="https://www.youtube.com/embed/-I-zdmg_Dno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           </div>
+       </div>
     </div>
     <script src="dist/main.js"></script>
 </body>

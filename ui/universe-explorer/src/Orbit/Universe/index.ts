@@ -51,8 +51,8 @@ export default class Universe {
   }
 
   drawStaticSun() {
-    let widthFactor = 600;
-    let heightFactor = 600;
+    let widthFactor = 750;
+    let heightFactor = 750;
     this.sun = new Sun(widthFactor, heightFactor, this.planetScale, this.sunImg);
     this.space.append(this.sun.element);
   }
