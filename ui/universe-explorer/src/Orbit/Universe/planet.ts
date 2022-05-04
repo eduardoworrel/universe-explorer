@@ -43,6 +43,8 @@ export class Planet {
     img.style.left = `${this.x}px`;
     img.style.top = `${this.y}px`;
     img.style.position = 'absolute';
+    img.classList.add('trigger');
+    img.setAttribute('show', 'planets');
     this.element = img;
 
     setInterval(() => {

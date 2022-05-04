@@ -1,16 +1,27 @@
-import Character from '../Character';
+import { WatchMove } from "../Move/config/WatchMove";
+
 export class Interactive{
     interactiveContext = document.getElementById('interactive-content') as HTMLElement;
-    character: Character;
+    character: HTMLElement;
     visible: string = "";
-    constructor(character: Character){
+    control: WatchMove;
+    close = document.querySelector('.close') as HTMLElement;
+    lastInterval: any;
+    constructor(character: HTMLElement, control: WatchMove){
+        this.control = control;
         this.character = character;
-        this.interactiveContext.addEventListener("click",()=>{
-            window.focus()
-        })
+        this.close.addEventListener("click", () => {
+            this.visible = "";
+            Array.from(this.interactiveContext.querySelectorAll("div")).forEach((element: HTMLElement) => {
+                element.style.display = "none";
+            })
+            this.interactiveContext.style.display = "none";
+            this.interactiveContext.style.pointerEvents = "none";
+        });
         setInterval(() => {
+            window.focus()
             if(this.visible == ""){
-                var BBoxA = this.character.character.getBoundingClientRect()
+                var BBoxA = this.character.getBoundingClientRect()
                 const intersectables = document.querySelectorAll('.trigger');
                 for(let element of Array.from(intersectables)){
                     var BBoxB = element.getBoundingClientRect()
@@ -24,28 +35,38 @@ export class Interactive{
        
     }
     showThat(triggerElement: HTMLElement){
-        if(this.visible != triggerElement.getAttribute("show") as string){
+
             this.visible = triggerElement.getAttribute("show") as string;
             let element = document.getElementById(this.visible) as HTMLElement
             this.interactiveContext.style.display = "block";
             element.style.display = "block";
             this.interactiveContext.style.pointerEvents = "auto";
-            this.watchOut(triggerElement, element);
+            this.watchOut(triggerElement);
             
-        }
+        
     }
-    watchOut(triggerElement: HTMLElement,targetElement: HTMLElement){
-        setInterval(() => {
+    watchOut(triggerElement: HTMLElement){
+        this.close.style.display = "none";
+        if(this.lastInterval){
+            clearInterval(this.lastInterval);
+        }
+        this.lastInterval = setInterval(() => {
             if(this.visible != ""){
-                var BBoxB = this.character.character.getBoundingClientRect()
+                var BBoxB = this.character.getBoundingClientRect()
                 var BBoxA = triggerElement.getBoundingClientRect()
-                console.log(this.rectIntersect(BBoxA, BBoxB))
                 if(!this.rectIntersect(BBoxA, BBoxB)){
-                    this.visible = "";
-                    targetElement.style.display = "none";
-                    this.interactiveContext.style.display = "none";
-                    this.interactiveContext.style.pointerEvents = "none";
-                   
+                    this.close.style.display = "block";
+                    setTimeout(() => {
+                        Array.from(this.interactiveContext.querySelectorAll("div")).forEach((element: HTMLElement) => {
+                            element.style.display = "none";
+                        })
+                        this.visible = ""
+                        this.interactiveContext.style.display = "none";
+                        this.interactiveContext.style.pointerEvents = "none";
+                    },3000)
+                    clearInterval(this.lastInterval);
+                }else{
+                    this.close.style.display = "none";
                 }
             }
         },200);
