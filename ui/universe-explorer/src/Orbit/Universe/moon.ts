@@ -25,6 +25,8 @@ export class Moon {
     moon.style.left = `${this.x}px`;
     moon.style.top = `${this.y}px`;
     moon.style.position = 'absolute';
+    moon.classList.add('trigger');
+    moon.setAttribute('show', 'moons');
     this.element = moon;
   }
   update(x: any, y: any) {

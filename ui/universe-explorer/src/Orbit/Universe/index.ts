@@ -26,33 +26,57 @@ export default class Universe {
 
     this.space = space;
     this.loadImages();
+  }
+  start() {
     this.drawStaticSun();
 
-    let planet = new Planet('Earth', 150, 150, this.spacing * 7.5, 150, this.sun.mass,'assets/images/space-elements/slow-earth.gif');
+    let planet = new Planet(
+      'earth',
+      150,
+      150,
+      this.spacing * 7.5,
+      150,
+      this.sun.mass,
+      'assets/images/space-elements/slow-earth.gif',
+    );
     this.planets.push(planet);
     this.space.append(planet.element);
-    this.space.append(planet.addMoon(40, 40, 50,this.spacing * 2));
+    this.space.append(planet.addMoon(40, 40, 50, this.spacing * 2));
 
-    planet = new Planet('1', 60, 60, this.spacing * 3, 0, this.sun.mass,'assets/images/space-elements/dry.gif');
+    planet = new Planet('planets', 60, 60, this.spacing * 4, 0, this.sun.mass, 'assets/images/space-elements/dry.gif');
     this.planets.push(planet);
     this.space.append(planet.element);
-    this.space.append(planet.addMoon(20, 20, 50,this.spacing * 0.5));
+    this.space.append(planet.addMoon(20, 20, 50, this.spacing * 0.5));
 
-
-    planet = new Planet('2', 360, 360, this.spacing * 12, 0, this.sun.mass,'assets/images/space-elements/buraco-negro.gif');
+    planet = new Planet(
+      'blackhole',
+      360,
+      360,
+      this.spacing * 12,
+      0,
+      this.sun.mass,
+      'assets/images/space-elements/buraco-negro.gif',
+    );
     this.planets.push(planet);
     this.space.append(planet.element);
 
-    planet = new Planet('3', 360, 360, this.spacing * 12, 800, this.sun.mass,'assets/images/space-elements/gigant.gif');
+    planet = new Planet(
+      'planets',
+      360,
+      360,
+      this.spacing * 12,
+      800,
+      this.sun.mass,
+      'assets/images/space-elements/gigant.gif',
+    );
     this.planets.push(planet);
     this.space.append(planet.element);
-    this.space.append(planet.addMoon(50, 50, 50,this.spacing * 1.7));
-    this.space.append(planet.addMoon(70, 70, 150,this.spacing * 2));
+    this.space.append(planet.addMoon(50, 50, 50, this.spacing * 1.7));
+    this.space.append(planet.addMoon(70, 70, 150, this.spacing * 2));
   }
-
   drawStaticSun() {
-    let widthFactor = 750;
-    let heightFactor = 750;
+    const widthFactor = 750;
+    const heightFactor = 750;
     this.sun = new Sun(widthFactor, heightFactor, this.planetScale, this.sunImg);
     this.space.append(this.sun.element);
   }

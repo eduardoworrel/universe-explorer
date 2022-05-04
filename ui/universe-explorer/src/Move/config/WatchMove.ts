@@ -25,6 +25,13 @@ export class WatchMove {
   randonTokenString() {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   }
+  updateMove(newX: number, newY: number) {
+    this.position.vertical = newX;
+    this.position.horizontal = newY;
+    this.character.style.top = this.position.vertical + speed.unit;
+    this.character.style.left = this.position.horizontal + speed.unit;
+    this.updatePosition();
+  }
   move(p: HTMLElement) {
     setInterval(() => {
       if (this.directions.includes('ArrowUp')) {

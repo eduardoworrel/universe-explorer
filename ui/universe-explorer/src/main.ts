@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import Character from './Character';
 import Friends from './Friends';
 import Universo from './Orbit/Universe';
@@ -9,4 +10,5 @@ character.start();
 const friends = new Friends(real, character.character.id);
 friends.start();
 
-new Universo(real);
+const universo = new Universo(real);
+universo.start();

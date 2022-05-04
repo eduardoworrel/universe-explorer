@@ -18,8 +18,16 @@ export class Planet {
   space: number;
   earthImg: string;
   moon: any;
-  moons : Moon[] = [];
-  constructor(name: any, widthFactor: any, heightFactor: any, radius: any, angle: any, massReference: number, theImg:string) {
+  moons: Moon[] = [];
+  constructor(
+    name: any,
+    widthFactor: any,
+    heightFactor: any,
+    radius: any,
+    angle: any,
+    massReference: number,
+    theImg: string,
+  ) {
     this.earthImg = theImg;
 
     this.name = name;
@@ -44,7 +52,7 @@ export class Planet {
     img.style.top = `${this.y}px`;
     img.style.position = 'absolute';
     img.classList.add('trigger');
-    img.setAttribute('show', 'planets');
+    img.setAttribute('show', name);
     this.element = img;
 
     setInterval(() => {
@@ -53,13 +61,13 @@ export class Planet {
       this.y = 2850 / 2 - Math.sin(this.angle) * this.radius;
       this.element.style.left = `${this.x}px`;
       this.element.style.top = `${this.y}px`;
-      for(let moon of this.moons){
+      for (const moon of this.moons) {
         moon.update(this.x, this.y);
       }
     }, 50);
   }
-  addMoon(largura: any, altura: any, angle: any, distancia: number ){
-    let moon = new Moon(largura, altura, angle, this.mass, distancia);
+  addMoon(largura: any, altura: any, angle: any, distancia: number) {
+    const moon = new Moon(largura, altura, angle, this.mass, distancia);
     this.moons.push(moon);
     return moon.element;
   }
