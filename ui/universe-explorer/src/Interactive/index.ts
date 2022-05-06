@@ -74,7 +74,7 @@ export class Interactive {
           }
         }
       }
-    }, 200);
+    }, 80);
   }
   showThat(triggerElement: HTMLElement) {
     if (this.visible === '') {

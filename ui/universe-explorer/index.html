@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
     <title>Explorer</title>
     <style>
@@ -61,8 +61,8 @@
             z-index: 9;
         }
         .locked{
-            width: 80% !important;
-            height: 80% !important;
+            width: 30% !important;
+            height: 20% !important;
             z-index: 9999 !important;
             border-radius: 10px !important;
         }
@@ -79,7 +79,6 @@
         }
         #interactive-content div{   
 
-            cursor: pointer;
             text-align: center;
             font-size: 42px;
             color: #ffbd00;
@@ -87,6 +86,12 @@
         }
         #interactive-content div iframe {
             height: 100%;
+        }
+        .legenda{
+            margin: 12px;
+            font-family: monospace;
+            color: #272736;
+            font-size: 20px;
         }
     </style>
 </head>
@@ -103,8 +108,11 @@
                 float: right;
                 padding: 5px;
                 margin-top: -55px; cursor: pointer;" alt="">
-                <iframe width="100%" src="https://www.youtube.com/embed/-I-zdmg_Dno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+                  <p class="legenda">Sol</p>
+                  <a href="https://solarsystem.nasa.gov/solar-system/sun/overview/" target="_blank">
+                      <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
+                  </a>
+              </div>
         </div>
         <div id="planets">
             <span class="alert">!</span>
@@ -113,7 +121,11 @@
                 float: right;
                 padding: 5px;
                 margin-top: -55px; cursor: pointer;" alt="">
-            <iframe width="100%" src="https://www.youtube.com/embed/UChzxK9gknM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                 <p class="legenda">Outros planetas</p>
+                 <a href="https://solarsystem.nasa.gov/planets/saturn/overview/" target="_blank">
+                     <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
+                 </a>
+            
             </div>
         </div>
         <div id="blackhole">
@@ -122,7 +134,11 @@
                 <img src="./assets/images/cancel.png" class="close" style="    width: 35px;
                 float: right;
                 padding: 5px;
-                margin-top: -55px; cursor: pointer;" alt="">   <iframe width="100%" src="https://www.youtube.com/embed/TL0Qvr8bCeg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                margin-top: -55px; cursor: pointer;" alt=""> 
+                <p class="legenda">Buraco Negro</p>
+                <a href="https://www.nasa.gov/subject/6895/black-holes/" target="_blank">
+                    <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
+                </a>
             </div>
         </div>
         <div id="earth"><span class="alert">!</span>
@@ -131,26 +147,21 @@
                 float: right;
                 padding: 5px;
                 margin-top: -55px; cursor: pointer;" alt="">
-            <iframe width="100%" src="https://www.youtube.com/embed/E9oKEJ1pXPw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+              <p class="legenda">Terra</p>
+              <a href="https://solarsystem.nasa.gov/planets/earth/overview/" target="_blank">
+                  <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
+              </a> </div>
         </div>
-        <div id="earth"><span class="alert">!</span>
-            <div class="alert-toShow">
-                <img src="./assets/images/cancel.png"class="close" style="    width: 35px;
-                float: right;
-                padding: 5px;
-                margin-top: -55px; cursor: pointer;" alt="">
-            <iframe width="100%" src="https://www.youtube.com/embed/E9oKEJ1pXPw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-
         <div id="moons"><span class="alert">!</span>
             <div class="alert-toShow">
                 <img src="./assets/images/cancel.png"class="close" style="    width: 35px;
                 float: right;
                 padding: 5px;
                 margin-top: -55px; cursor: pointer;" alt="">
-                <iframe width="100%" src="https://www.youtube.com/embed/kqpFAQYQEco" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <p class="legenda">Lua</p>
+              <a href="https://solarsystem.nasa.gov/moons/earths-moon/overview/" target="_blank">
+                  <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
+              </a>
             </div>
         </div>
     </div>
