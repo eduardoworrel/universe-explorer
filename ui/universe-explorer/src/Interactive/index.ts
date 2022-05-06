@@ -3,10 +3,10 @@ import { WatchMove } from '../Move/config/WatchMove';
 export class Interactive {
   interactiveContext = document.getElementById('interactive-content') as HTMLElement;
   alerts = document.querySelectorAll('.alert');
+  closes = document.querySelectorAll('.close');
   character: HTMLElement;
   visible: string = '';
   control: WatchMove;
-  closes = document.querySelectorAll('.close');
   lastInterval: any;
   triggerElement: HTMLElement;
   lockInterval: any;
@@ -34,24 +34,35 @@ export class Interactive {
         this.visible = 'lock';
         this.interactiveContext.classList.add('locked');
 
-        this.lockInterval = setInterval(() => {
-          if (this.visible !== 'lock') {
-            (alert as HTMLElement).style.display = 'block';
-            content.style.display = 'none';
-            clearInterval(this.lockInterval);
-          } else {
-            let vertical = parseFloat(this.triggerElement.style.top.replace('px', ''));
-            let horizontal = parseFloat(this.triggerElement.style.left.replace('px', ''));
-
-            vertical += parseFloat(this.triggerElement.style.width.replace('px', '')) / 2;
-            horizontal += parseFloat(this.triggerElement.style.height.replace('px', '')) / 2;
-            this.control.updateMove(vertical - 75, horizontal - 75);
-          }
-        }, 20);
       });
     }
+    this.watch()
+  }
+  watch(){
+ 
     setInterval(() => {
-      window.focus();
+      if (this.visible === 'lock') {
+        let vertical = parseFloat(this.triggerElement.style.top.replace('px', ''));
+        let horizontal = parseFloat(this.triggerElement.style.left.replace('px', ''));
+
+        vertical += parseFloat(this.triggerElement.style.width.replace('px', '')) / 2;
+        horizontal += parseFloat(this.triggerElement.style.height.replace('px', '')) / 2;
+        this.control.updateMove(vertical - 75, horizontal - 75);
+      }
+
+      if (this.visible !== '' && this.visible !== 'lock') {
+        const BBoxB = this.character.getBoundingClientRect();
+        const BBoxA = this.triggerElement.getBoundingClientRect();
+        if (!this.rectIntersect(BBoxA, BBoxB)) {
+          Array.from(this.interactiveContext.querySelectorAll('div')).forEach((element: HTMLElement) => {
+            element.style.display = 'none';
+          });
+          this.visible = '';
+          this.interactiveContext.style.display = 'none';
+          this.interactiveContext.style.pointerEvents = 'none';
+        }
+      }
+
       if (this.visible === '') {
         const BBoxA = this.character.getBoundingClientRect();
         const intersectables = document.querySelectorAll('.trigger');
@@ -67,32 +78,21 @@ export class Interactive {
   }
   showThat(triggerElement: HTMLElement) {
     if (this.visible === '') {
+      for (const alert of Array.from(this.alerts)) {
+        (alert as HTMLElement).style.display = 'block';
+         const content = alert.parentElement?.querySelector('.alert-toShow') as HTMLElement;
+         content.style.display = 'none';
+       }
       this.visible = triggerElement.getAttribute('show') as string;
+      this.triggerElement = triggerElement;
 
       const element = document.getElementById(this.visible) as HTMLElement;
-      this.interactiveContext.style.display = 'block';
       element.style.display = 'block';
+      
+      this.interactiveContext.style.display = 'block';
       this.interactiveContext.style.pointerEvents = 'auto';
-      this.triggerElement = triggerElement;
-      this.watchOut(triggerElement);
+      
     }
-  }
-  watchOut(triggerElement: HTMLElement) {
-    const lastInterval = setInterval(() => {
-      if (this.visible !== '' && this.visible !== 'lock') {
-        const BBoxB = this.character.getBoundingClientRect();
-        const BBoxA = triggerElement.getBoundingClientRect();
-        if (!this.rectIntersect(BBoxA, BBoxB)) {
-          Array.from(this.interactiveContext.querySelectorAll('div')).forEach((element: HTMLElement) => {
-            element.style.display = 'none';
-          });
-          this.visible = '';
-          this.interactiveContext.style.display = 'none';
-          this.interactiveContext.style.pointerEvents = 'none';
-          clearInterval(lastInterval);
-        }
-      }
-    }, 200);
   }
   rangeIntersect = (min0: number, max0: number, min1: number, max1: number) =>
     Math.max(min0, max0) >= Math.min(min1, max1) && Math.min(min0, max0) <= Math.max(min1, max1);

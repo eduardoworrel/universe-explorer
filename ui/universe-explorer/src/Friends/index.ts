@@ -55,7 +55,7 @@ export default class Friends {
   ) {
     inimigo
       .animate([{ left: personagem.x + 'px' }], {
-        duration: 1000,
+        duration: 300,
         iterations: 1,
         fill: 'forwards',
       })
@@ -63,7 +63,7 @@ export default class Friends {
       .commitStyles();
     inimigo
       .animate([{ top: personagem.y + 'px' }], {
-        duration: 1000,
+        duration: 300,
         iterations: 1,
         fill: 'forwards',
       })
