@@ -33,13 +33,11 @@ export class Interactive {
         (alert as HTMLElement).style.display = 'none';
         this.visible = 'lock';
         this.interactiveContext.classList.add('locked');
-
       });
     }
-    this.watch()
+    this.watch();
   }
-  watch(){
- 
+  watch() {
     setInterval(() => {
       if (this.visible === 'lock') {
         let vertical = parseFloat(this.triggerElement.style.top.replace('px', ''));
@@ -80,18 +78,17 @@ export class Interactive {
     if (this.visible === '') {
       for (const alert of Array.from(this.alerts)) {
         (alert as HTMLElement).style.display = 'block';
-         const content = alert.parentElement?.querySelector('.alert-toShow') as HTMLElement;
-         content.style.display = 'none';
-       }
+        const content = alert.parentElement?.querySelector('.alert-toShow') as HTMLElement;
+        content.style.display = 'none';
+      }
       this.visible = triggerElement.getAttribute('show') as string;
       this.triggerElement = triggerElement;
 
       const element = document.getElementById(this.visible) as HTMLElement;
       element.style.display = 'block';
-      
+
       this.interactiveContext.style.display = 'block';
       this.interactiveContext.style.pointerEvents = 'auto';
-      
     }
   }
   rangeIntersect = (min0: number, max0: number, min1: number, max1: number) =>
