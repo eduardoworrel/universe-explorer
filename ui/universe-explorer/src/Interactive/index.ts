@@ -45,6 +45,7 @@ export class Interactive {
 
         vertical += parseFloat(this.triggerElement.style.width.replace('px', '')) / 2;
         horizontal += parseFloat(this.triggerElement.style.height.replace('px', '')) / 2;
+
         this.control.updateMove(vertical - 75, horizontal - 75);
       }
 
@@ -72,7 +73,7 @@ export class Interactive {
           }
         }
       }
-    }, 80);
+    }, 20);
   }
   showThat(triggerElement: HTMLElement) {
     if (this.visible === '') {
