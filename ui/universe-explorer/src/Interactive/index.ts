@@ -21,6 +21,7 @@ export class Interactive {
         Array.from(this.interactiveContext.querySelectorAll('div')).forEach((element: HTMLElement) => {
           element.style.display = 'none';
         });
+        this.triggerElement.style.display = 'block';
         this.interactiveContext.style.display = 'none';
         this.interactiveContext.style.pointerEvents = 'none';
         this.interactiveContext.classList.remove('locked');
@@ -40,13 +41,14 @@ export class Interactive {
   watch() {
     setInterval(() => {
       if (this.visible === 'lock') {
-        let vertical = parseFloat(this.triggerElement.style.top.replace('px', ''));
-        let horizontal = parseFloat(this.triggerElement.style.left.replace('px', ''));
-
-        vertical += parseFloat(this.triggerElement.style.width.replace('px', '')) / 2;
-        horizontal += parseFloat(this.triggerElement.style.height.replace('px', '')) / 2;
-
-        this.control.updateMove(vertical - 75, horizontal - 75);
+        if(this.triggerElement.style.display !== 'none') {
+          this.triggerElement.style.display = 'none';
+        }
+          let vertical = parseFloat(this.triggerElement.style.top.replace('px', ''));
+          let horizontal = parseFloat(this.triggerElement.style.left.replace('px', ''));
+          vertical += parseFloat(this.triggerElement.style.width.replace('px', '')) / 2;
+          horizontal += parseFloat(this.triggerElement.style.height.replace('px', '')) / 2;
+          this.control.updateMove(vertical - 75, horizontal - 75);
       }
 
       if (this.visible !== '' && this.visible !== 'lock') {
