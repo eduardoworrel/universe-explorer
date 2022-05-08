@@ -81,8 +81,8 @@ export default class Universe {
     );
     this.planets.push(planet);
     this.space.append(planet.element);
-    this.space.append(planet.addMoon(10, 10, 50, this.spacing * 0.3));
-    this.space.append(planet.addMoon(13, 13, 50, this.spacing * 0.5));
+    this.space.append(planet.addMoon(7, 7, 50, this.spacing * 0.3));
+    this.space.append(planet.addMoon(10, 10, 150, this.spacing * 0.4));
 
     planet = new Planet(
       'jupiter',
@@ -95,18 +95,16 @@ export default class Universe {
     );
     this.planets.push(planet);
     this.space.append(planet.element);
-    this.space.append(planet.addMoon(10, 10, 150, this.spacing * 0.2));
-    this.space.append(planet.addMoon(13, 13, 250, this.spacing * 1.2));
-    this.space.append(planet.addMoon(10, 10, 350, this.spacing * 0.8));
-    this.space.append(planet.addMoon(13, 13, 450, this.spacing * 1.1));
-    this.space.append(planet.addMoon(10, 10, 550, this.spacing * 0.6));
-    this.space.append(planet.addMoon(13, 13, 650, this.spacing * 1));
+    this.space.append(planet.addMoon(3, 3, 250, this.spacing * 1.1));
+    this.space.append(planet.addMoon(10, 10, 350, this.spacing * 0.9));
+    this.space.append(planet.addMoon(7, 7, 450, this.spacing * 1.1));
+    this.space.append(planet.addMoon(5, 5, 650, this.spacing * 1));
 
     planet = new Planet(
       'saturno',
-      150,
-      150,
-      this.spacing * 10,
+      220,
+      220,
+      this.spacing * 11,
       800,
       this.sun.mass,
       'assets/images/space-elements/saturno.gif',
@@ -116,8 +114,8 @@ export default class Universe {
 
     planet = new Planet(
       'urano',
-      90,
-      90,
+      80,
+      80,
       this.spacing * 12,
       800,
       this.sun.mass,
@@ -128,8 +126,8 @@ export default class Universe {
 
     planet = new Planet(
       'netuno',
-      90,
-      90,
+      75,
+      75,
       this.spacing * 14,
       800,
       this.sun.mass,

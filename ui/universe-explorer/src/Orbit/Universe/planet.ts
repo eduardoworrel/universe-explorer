@@ -38,7 +38,7 @@ export class Planet {
     this.radius = radius;
     this.mass = this.width * this.height;
     this.angle = angle;
-    this.angSpeed = getAngSpeed(this.radius, massReference);
+    this.angSpeed = getAngSpeed(this.radius * 2, massReference);
 
     this.x = 3025 - this.width / 2 + Math.cos(this.angle) * this.radius;
     this.y = 3025 - this.height / 2 - Math.sin(this.angle) * this.radius;
@@ -57,8 +57,8 @@ export class Planet {
 
     setInterval(() => {
       this.angle += this.angSpeed;
-      this.x = (3000 - this.width) / 2 + Math.cos(this.angle) * this.radius;
-      this.y = (3000 - this.height) / 2 - Math.sin(this.angle) * this.radius;
+      this.x = (3000 + this.width - this.width) / 2 + Math.cos(this.angle) * this.radius;
+      this.y = (3000 + this.width - this.height) / 2 - Math.sin(this.angle) * this.radius;
       this.element.style.left = `${this.x}px`;
       this.element.style.top = `${this.y}px`;
       for (const moon of this.moons) {
