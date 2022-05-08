@@ -104,8 +104,8 @@ export default class Universe {
 
     planet = new Planet(
       'saturno',
-      120,
-      120,
+      150,
+      150,
       this.spacing * 10,
       800,
       this.sun.mass,
