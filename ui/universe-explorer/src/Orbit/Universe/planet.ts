@@ -63,7 +63,7 @@ export class Planet {
       this.element.style.left = `${this.x}px`;
       this.element.style.top = `${this.y}px`;
       for (const moon of this.moons) {
-        moon.update(this.x + (this.width /2), this.y+ (this.width /2));
+        moon.update(this.x + this.width / 2, this.y + this.width / 2);
       }
     }, 50);
   }

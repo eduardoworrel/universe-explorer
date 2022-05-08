@@ -71,7 +71,7 @@ export default class Universe {
     this.space.append(planet.addMoon(10, 10, 800, this.spacing * 0.5));
 
     planet = new Planet(
-      'Marte',
+      'marte',
       40,
       40,
       this.spacing * 6,

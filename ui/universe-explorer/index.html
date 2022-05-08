@@ -25,14 +25,8 @@
             background-size: 30%;
             background-image: url('https://flxt.tmsimg.com/assets/p20895039_i_h9_aa.jpg');
         }
-        @media (max-width: 600px)
-{
-        #realcontent{
-            zoom:100%;
-       
-        }
-}
-        
+
+                
         #area{
             -ms-overflow-style: none; /* for Internet Explorer, Edge */
             scrollbar-width: none; /* for Firefox */
@@ -62,7 +56,7 @@
         }
         .locked{
             width: 30% !important;
-            height: 20% !important;
+            height: 50% !important;
             z-index: 9999 !important;
             border-radius: 10px !important;
         }
@@ -77,7 +71,7 @@
             margin: 0px -10px;
             position: absolute;
         }
-        #interactive-content div{   
+        #interactive-content span{   
 
             text-align: center;
             font-size: 42px;
@@ -92,6 +86,30 @@
             font-family: monospace;
             color: #272736;
             font-size: 20px;
+        }
+        a.action {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color:whitesmoke;
+            background-color: #272736;
+            border-radius: 40px;
+            width: 70%;
+            margin: 0 auto;
+            padding: 10px
+        }
+        .action img{
+            width: 60px;
+        }
+        @media (max-width: 600px)
+        {
+            #realcontent{
+                zoom:100%;
+        
+            }
+            .locked{
+                width: 83% !important;
+            }
         }
     </style>
 </head>
@@ -108,50 +126,225 @@
                 float: right;
                 padding: 5px;
                 margin-top: -55px; cursor: pointer;" alt="">
-                  <p class="legenda">Sol</p>
-                  <a href="https://solarsystem.nasa.gov/solar-system/sun/overview/" target="_blank">
+      
+                  <p class="legenda">
+                     <b>Sol</b>
+                      <br>
+                      <br>
+                      Nosso Sol é uma estrela de 4,5 bilhões de anos –
+                       uma bola quente e brilhante de hidrogênio e hélio no centro do nosso sistema solar.
+                        O Sol está a cerca de 150 milhões de quilômetros da Terra e, sem sua energia,
+                         a vida como a conhecemos não poderia existir aqui em nosso planeta natal.
+                </p>
+                  <a class="action" href="https://solarsystem.nasa.gov/solar-system/sun/overview/" target="_blank">
                       <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
-                  </a>
+                        <b>Solar System Explorer</b>
+                    </a>
               </div>
         </div>
-        <div id="planets">
+        <div id="mercurio">
             <span class="alert">!</span>
             <div class="alert-toShow">
                 <img src="./assets/images/cancel.png"class="close" style="    width: 35px;
                 float: right;
                 padding: 5px;
                 margin-top: -55px; cursor: pointer;" alt="">
-                 <p class="legenda">Outros planetas</p>
-                 <a href="https://solarsystem.nasa.gov/planets/saturn/overview/" target="_blank">
-                     <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
-                 </a>
-            
-            </div>
+      
+                  <p class="legenda">
+                     <b>Mercúrio</b>
+                      <br>
+                      <br>
+                       Mercúrio é o planeta mais rápido do nosso sistema solar –
+                       viajando pelo espaço a quase 47 quilômetros por segundo. 
+                       Como Mercúrio é o planeta mais rápido e tem a menor 
+                       distância para viajar ao redor do Sol, ele tem o ano mais curto
+                       de todos os planetas do nosso sistema solar – 88 dias.
+                </p>
+                  <a class="action" href="https://solarsystem.nasa.gov/planets/mercury/overview/" target="_blank">
+                      <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
+                        <b>Solar System Explorer</b>
+                    </a>
+              </div>
         </div>
-        <div id="blackhole">
+        <div id="venus">
             <span class="alert">!</span>
-            <div class="alert-toShow">
-                <img src="./assets/images/cancel.png" class="close" style="    width: 35px;
-                float: right;
-                padding: 5px;
-                margin-top: -55px; cursor: pointer;" alt=""> 
-                <p class="legenda">Buraco Negro</p>
-                <a href="https://www.nasa.gov/subject/6895/black-holes/" target="_blank">
-                    <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
-                </a>
-            </div>
-        </div>
-        <div id="earth"><span class="alert">!</span>
             <div class="alert-toShow">
                 <img src="./assets/images/cancel.png"class="close" style="    width: 35px;
                 float: right;
                 padding: 5px;
                 margin-top: -55px; cursor: pointer;" alt="">
-              <p class="legenda">Terra</p>
-              <a href="https://solarsystem.nasa.gov/planets/earth/overview/" target="_blank">
-                  <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
-              </a> </div>
+      
+                  <p class="legenda">
+                     <b>Vênus</b>
+                      <br>
+                      <br>
+                      Vênus tem uma atmosfera espessa e tóxica cheia de dióxido de carbono e está 
+                      perpetuamente envolta em nuvens espessas e amareladas de ácido sulfúrico que 
+                      retêm o calor, causando um efeito estufa descontrolado. 
+                      <br>As temperaturas da superfície em Vênus são de cerca de 475 graus Celsius.
+                </p>
+                  <a class="action" href="https://solarsystem.nasa.gov/planets/mercury/overview/" target="_blank">
+                      <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
+                        <b>Solar System Explorer</b>
+                    </a>
+              </div>
         </div>
+
+        <div id="earth">
+            <span class="alert">!</span>
+            <div class="alert-toShow">
+                <img src="./assets/images/cancel.png"class="close" style="    width: 35px;
+                float: right;
+                padding: 5px;
+                margin-top: -55px; cursor: pointer;" alt="">
+      
+                  <p class="legenda">
+                     <b>Terra</b>
+                      <br>
+                      <br>
+                      O nome Terra tem pelo menos 1.000 anos. <br> <br>
+                      Todos os planetas, exceto a Terra,
+                       receberam nomes de deuses e deusas gregos e romanos.
+                       <br> <br>
+                        No entanto, o nome Terra é uma palavra germânica,
+                         que significa simplesmente “o solo”.
+                </p>
+                <br>
+                  <a class="action" href="https://solarsystem.nasa.gov/planets/earth/overview/" target="_blank">
+                      <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
+                        <b>Solar System Explorer</b>
+                    </a>
+              </div>
+        </div>
+
+        <div id="marte">
+            <span class="alert">!</span>
+            <div class="alert-toShow">
+                <img src="./assets/images/cancel.png"class="close" style="    width: 35px;
+                float: right;
+                padding: 5px;
+                margin-top: -55px; cursor: pointer;" alt="">
+      
+                  <p class="legenda">
+                     <b>Marte</b>
+                      <br>
+                      <br>
+                      Marte é um dos corpos mais explorados em nosso sistema solar, 
+                      e é o único planeta para onde enviamos rovers para percorrer a paisagem alienígena.
+                    <br><br>
+                      A NASA atualmente tem dois rovers, 
+                      um lander e um helicóptero explorando a superfície de Marte.
+                </p>
+                <br>
+                  <a class="action" href="https://solarsystem.nasa.gov/planets/marte/overview/" target="_blank">
+                      <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
+                        <b>Solar System Explorer</b>
+                    </a>
+              </div>
+        </div>
+        
+
+        <div id="jupiter">
+            <span class="alert">!</span>
+            <div class="alert-toShow">
+                <img src="./assets/images/cancel.png"class="close" style="    width: 35px;
+                float: right;
+                padding: 5px;
+                margin-top: -55px; cursor: pointer;" alt="">
+      
+                  <p class="legenda">
+                     <b>Júpiter</b>
+                      <br>
+                      <br>
+                      Júpiter tem uma longa história de cientistas surpreendentes
+                       – desde 1610, quando Galileu Galilei encontrou as primeiras
+                        luas além da Terra.  <br>
+                        <br>Essa descoberta mudou a maneira como 
+                        vemos o universo.
+                </p>
+                <br>
+                  <a class="action" href="https://solarsystem.nasa.gov/planets/jupiter/overview/" target="_blank">
+                      <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
+                        <b>Solar System Explorer</b>
+                    </a>
+              </div>
+        </div>
+        
+        <div id="saturno">
+            <span class="alert">!</span>
+            <div class="alert-toShow">
+                <img src="./assets/images/cancel.png"class="close" style="    width: 35px;
+                float: right;
+                padding: 5px;
+                margin-top: -55px; cursor: pointer;" alt="">
+      
+                  <p class="legenda">
+                     <b>Saturno</b>
+                      <br>
+                      <br>
+                      Saturno tem 53 luas conhecidas com 29 luas adicionais aguardando confirmação de sua descoberta – que é um total de 82 luas.
+                </p>
+                <br> <br>
+                <br> <br>
+                <br>
+                  <a class="action" href="https://solarsystem.nasa.gov/planets/saturn/overview/" target="_blank">
+                      <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
+                        <b>Solar System Explorer</b>
+                    </a>
+              </div>
+        </div>
+        
+        <div id="urano">
+            <span class="alert">!</span>
+            <div class="alert-toShow">
+                <img src="./assets/images/cancel.png"class="close" style="    width: 35px;
+                float: right;
+                padding: 5px;
+                margin-top: -55px; cursor: pointer;" alt="">
+      
+                  <p class="legenda">
+                        <b>Urano</b>
+                        <br>
+                        <br>
+                        Urano leva cerca de 17 horas para girar uma vez (um dia de Urano)
+                         e cerca de 84 anos terrestres para completar uma órbita do Sol (um ano de Urano).
+                </p>
+                <br>
+                    <a class="action" href="https://solarsystem.nasa.gov/planets/uranus/overview/" target="_blank">
+                        <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
+                        <b>Solar System Explorer</b>
+                    </a>
+                </div>
+        </div>
+
+        <div id="netuno">
+            <span class="alert">!</span>
+            <div class="alert-toShow">
+                <img src="./assets/images/cancel.png"class="close" style="    width: 35px;
+                float: right;
+                padding: 5px;
+                margin-top: -55px; cursor: pointer;" alt="">
+      
+                  <p class="legenda">
+                        <b>Netuno</b>
+                        <br>
+                        <br>
+                        Netuno é o único planeta em nosso sistema
+                         solar não visível a olho nu e o primeiro 
+                         previsto pela matemática antes de sua descoberta.
+                          Em 2011, Netuno completou sua primeira órbita de 
+                          165 anos desde sua descoberta em 1846.
+                        <br>
+                        <br>
+                    </p>
+                <br>
+                    <a class="action" href="https://solarsystem.nasa.gov/planets/neptune/overview/" target="_blank">
+                        <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg">
+                        <b>Solar System Explorer</b>
+                    </a>
+                </div>
+        </div>
+        
         <div id="moons"><span class="alert">!</span>
             <div class="alert-toShow">
                 <img src="./assets/images/cancel.png"class="close" style="    width: 35px;

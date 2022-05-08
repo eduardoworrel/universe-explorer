@@ -1,6 +1,6 @@
 export const position = {
-  vertical: 60,
-  horizontal: 60,
+  vertical: 3000 / 2,
+  horizontal: 3000 / 2,
 };
 export const defaultSize = {
   width: 100,

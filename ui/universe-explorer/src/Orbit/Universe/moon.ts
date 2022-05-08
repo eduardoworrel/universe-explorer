@@ -31,8 +31,8 @@ export class Moon {
   }
   update(x: any, y: any) {
     this.angle += this.angSpeed;
-    this.x = x - (this.width/2)  + Math.cos(this.angle) * this.radius;
-    this.y = y - (this.height/2) - Math.sin(this.angle) * this.radius;
+    this.x = x - this.width / 2 + Math.cos(this.angle) * this.radius;
+    this.y = y - this.height / 2 - Math.sin(this.angle) * this.radius;
     this.element.style.left = `${this.x}px`;
     this.element.style.top = `${this.y}px`;
   }
