@@ -12,7 +12,7 @@ export class Moon {
   mass: number;
   constructor(widthFactor: any, heightFactor: any, angle: any, massReference: number, distancia: number) {
     this.angle = angle;
-    this.angSpeed = getAngSpeed(distancia, massReference * 2);
+    this.angSpeed = getAngSpeed(distancia, massReference);
     this.width = widthFactor;
     this.height = heightFactor;
     this.radius = distancia;

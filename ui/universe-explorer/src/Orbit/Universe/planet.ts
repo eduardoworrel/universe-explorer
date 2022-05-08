@@ -57,12 +57,12 @@ export class Planet {
 
     setInterval(() => {
       this.angle += this.angSpeed;
-      this.x = (3000 + this.width - this.width) / 2 + Math.cos(this.angle) * this.radius;
-      this.y = (3000 + this.width - this.height) / 2 - Math.sin(this.angle) * this.radius;
+      this.x = (3000 - this.width) / 2 + Math.cos(this.angle) * this.radius;
+      this.y = (3000 - this.height) / 2 - Math.sin(this.angle) * this.radius;
       this.element.style.left = `${this.x}px`;
       this.element.style.top = `${this.y}px`;
       for (const moon of this.moons) {
-        moon.update(this.x, this.y);
+        moon.update(this.x + (this.width /2), this.y+ (this.width /2));
       }
     }, 50);
   }
