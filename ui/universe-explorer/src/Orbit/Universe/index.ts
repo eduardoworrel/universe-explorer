@@ -34,9 +34,9 @@ export default class Universe {
 
     planet = new Planet(
       'mercurio',
-      15,
-      15,
-      this.spacing * 2.5,
+      25,
+      25,
+      this.spacing * 2.9,
       800,
       this.sun.mass,
       'assets/images/space-elements/mercurio.gif',
@@ -46,8 +46,8 @@ export default class Universe {
 
     planet = new Planet(
       'venus',
-      35,
-      35,
+      45,
+      45,
       this.spacing * 3.5,
       800,
       this.sun.mass,
@@ -58,8 +58,8 @@ export default class Universe {
 
     planet = new Planet(
       'earth',
-      40,
-      40,
+      55,
+      55,
       this.spacing * 4.5,
       800,
       this.sun.mass,
@@ -72,8 +72,8 @@ export default class Universe {
 
     planet = new Planet(
       'Marte',
-      30,
-      30,
+      40,
+      40,
       this.spacing * 6,
       800,
       this.sun.mass,
@@ -86,8 +86,8 @@ export default class Universe {
 
     planet = new Planet(
       'jupiter',
-      90,
-      90,
+      100,
+      100,
       this.spacing * 8,
       800,
       this.sun.mass,
@@ -116,7 +116,7 @@ export default class Universe {
       'urano',
       80,
       80,
-      this.spacing * 12,
+      this.spacing * 14,
       800,
       this.sun.mass,
       'assets/images/space-elements/urano.gif',
@@ -126,9 +126,9 @@ export default class Universe {
 
     planet = new Planet(
       'netuno',
-      75,
-      75,
-      this.spacing * 14,
+      65,
+      65,
+      this.spacing * 16,
       800,
       this.sun.mass,
       'assets/images/space-elements/netuno.gif',
@@ -144,6 +144,8 @@ export default class Universe {
   }
   loadImages() {
     this.sunImg = document.createElement('img');
+
+    this.sunImg.style.borderRadius = `50%`;
     this.sunImg.src = 'assets/images/space-elements/estrela.gif';
 
     this.rocketImg = 'assets/images/rocket.png';

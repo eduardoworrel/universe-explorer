@@ -46,6 +46,7 @@ export class Planet {
     const img = document.createElement('img');
     img.src = this.earthImg;
     this.img = img;
+    img.style.borderRadius = `50%`;
     img.style.width = `${this.width}px`;
     img.style.height = `${this.height}px`;
     img.style.left = `${this.x}px`;

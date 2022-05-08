@@ -46,8 +46,8 @@ export class Interactive {
         }
         let vertical = parseFloat(this.triggerElement.style.top.replace('px', ''));
         let horizontal = parseFloat(this.triggerElement.style.left.replace('px', ''));
-        vertical += parseFloat(this.triggerElement.style.width.replace('px', '')) / 2;
-        horizontal += parseFloat(this.triggerElement.style.height.replace('px', '')) / 2;
+        vertical += parseFloat(this.triggerElement.style.width.replace('px', ''));
+        horizontal += parseFloat(this.triggerElement.style.height.replace('px', ''));
         this.control.updateMove(vertical - 75, horizontal - 75);
       }
 
