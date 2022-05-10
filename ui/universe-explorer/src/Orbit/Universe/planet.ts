@@ -68,7 +68,7 @@ export class Planet {
     }, 50);
   }
   addMoon(largura: any, altura: any, angle: any, distancia: number) {
-    const moon = new Moon(largura, altura, angle, this.mass, distancia);
+    const moon = new Moon(this.name, largura, altura, angle, this.mass, distancia);
     this.moons.push(moon);
     return moon.element;
   }
