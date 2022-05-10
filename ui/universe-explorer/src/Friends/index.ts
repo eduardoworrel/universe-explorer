@@ -55,7 +55,7 @@ export default class Friends {
   ) {
     inimigo
       .animate([{ left: personagem.x + 'px' }], {
-        duration: 300,
+        duration: 1000,
         iterations: 1,
         fill: 'forwards',
       })
@@ -63,23 +63,24 @@ export default class Friends {
       .commitStyles();
     inimigo
       .animate([{ top: personagem.y + 'px' }], {
-        duration: 300,
+        duration: 1000,
         iterations: 1,
         fill: 'forwards',
       })
       .commitStyles();
-    inimigo.style.backgroundImage =
-      "url('https://i.pinimg.com/originals/a0/26/1b/a0261b885cfba5a65c675c33327acf5a.png')";
+    // inimigo.style.backgroundImage =
+    //   "url('https://i.pinimg.com/originals/a0/26/1b/a0261b885cfba5a65c675c33327acf5a.png')";
   }
   desenhaPersonagem(personagem: { id: string; picture: string; y: string; x: string; nome: string }) {
     const span = document.createElement(`span`);
     span.id = personagem.id;
 
     span.style.position = 'absolute';
-    span.style.width = defaultSize.width + 'px';
-    span.style.height = defaultSize.height + 'px';
+    span.style.width = defaultSize.width* 0.7 + 'px';
+    span.style.height = defaultSize.height* 0.7 + 'px';
     span.style.left = personagem.x + 'px';
     span.style.top = personagem.y + 'px';
+    span.style.opacity = '0.5';
     span.style.backgroundSize = '100%';
     span.style.backgroundImage = "url('https://i.pinimg.com/originals/a0/26/1b/a0261b885cfba5a65c675c33327acf5a.png')";
 
