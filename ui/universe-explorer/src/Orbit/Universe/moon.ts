@@ -1,4 +1,6 @@
 import { getAngSpeed } from './config/consts';
+import {setAlertStyle} from '../../Interactive'
+
 export class Moon {
   radius: any;
   width: any;
@@ -27,6 +29,7 @@ export class Moon {
     moon.style.position = 'absolute';
     moon.classList.add('trigger');
     moon.setAttribute('show', `moon-${contentName}`);
+    setAlertStyle(`moon-${contentName}`,this.moonImg)
     this.element = moon;
   }
   update(x: any, y: any) {

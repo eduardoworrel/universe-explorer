@@ -27,5 +27,7 @@ export default class Character {
                 z-index: 9999;   
           `,
     );
+    this.character.scrollIntoView({ block: 'center', inline: 'center', behavior: 'auto' });
+  
   }
 }

@@ -1,6 +1,6 @@
 import { getAngSpeed } from './config/consts';
 import { Moon } from './moon';
-
+import {setAlertStyle} from '../../Interactive'
 export class Planet {
   name: any;
   widthFactor: any;
@@ -55,7 +55,7 @@ export class Planet {
     img.classList.add('trigger');
     img.setAttribute('show', name);
     this.element = img;
-
+    setAlertStyle(name,theImg)
     setInterval(() => {
       this.angle += this.angSpeed;
       this.x = (3000 - this.width) / 2 + Math.cos(this.angle) * this.radius;

@@ -1,3 +1,5 @@
+
+import {setAlertStyle} from '../../Interactive'
 export class Sun {
   width: number;
   height: number;
@@ -22,6 +24,7 @@ export class Sun {
     sunImg.style.left = `${this.x}px`;
     sunImg.style.top = `${this.y}px`;
     sunImg.style.position = 'absolute';
+    setAlertStyle('sun',sunImg.src)
     this.element = sunImg;
   }
 }
