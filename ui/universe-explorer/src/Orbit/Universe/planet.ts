@@ -40,8 +40,8 @@ export class Planet {
     this.angle = angle;
     this.angSpeed = getAngSpeed(this.radius * 2, massReference);
 
-    this.x = 3025 - this.width / 2 + Math.cos(this.angle) * this.radius;
-    this.y = 3025 - this.height / 2 - Math.sin(this.angle) * this.radius;
+    this.x = 3900 - this.width / 2 + Math.cos(this.angle) * this.radius;
+    this.y = 3900 - this.height / 2 - Math.sin(this.angle) * this.radius;
 
     const img = document.createElement('img');
     img.src = this.earthImg;
@@ -58,8 +58,8 @@ export class Planet {
     setAlertStyle(name,theImg)
     setInterval(() => {
       this.angle += this.angSpeed;
-      this.x = (3000 - this.width) / 2 + Math.cos(this.angle) * this.radius;
-      this.y = (3000 - this.height) / 2 - Math.sin(this.angle) * this.radius;
+      this.x = (3900 - this.width) / 2 + Math.cos(this.angle) * this.radius;
+      this.y = (3900 - this.height) / 2 - Math.sin(this.angle) * this.radius;
       this.element.style.left = `${this.x}px`;
       this.element.style.top = `${this.y}px`;
       for (const moon of this.moons) {

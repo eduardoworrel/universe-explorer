@@ -1,5 +1,6 @@
 
 import {setAlertStyle} from '../../Interactive'
+import {limit} from '../../Move/config/positions'
 export class Sun {
   width: number;
   height: number;
@@ -13,8 +14,8 @@ export class Sun {
     this.height = heightFactor * planetScale;
     this.mass = this.width * this.height;
 
-    this.x = (3000 - this.width) / 2;
-    this.y = (3000 - this.height) / 2;
+    this.x = (limit.maxX - this.width) / 2;
+    this.y = (limit.maxY - this.height) / 2;
     this.img = sunImg;
     sunImg.classList.add('trigger');
     sunImg.setAttribute('show', 'sun');

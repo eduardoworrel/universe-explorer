@@ -2,7 +2,7 @@ import { Sun } from './sun';
 import { Planet } from './planet';
 
 export default class Universe {
-  spacing = 3000 / 30;
+  spacing = 3900 / 30;
   planets: Planet[] = [];
   rockets = {};
   rocketCounter = 0;
@@ -21,8 +21,8 @@ export default class Universe {
   innerWidth: number;
   innerHeight: number;
   constructor(space: HTMLDivElement) {
-    this.innerWidth = 3000;
-    this.innerHeight = 3000;
+    this.innerWidth = 3900;
+    this.innerHeight = 3900;
 
     this.space = space;
     this.loadImages();
