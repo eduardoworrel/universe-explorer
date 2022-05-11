@@ -2,7 +2,7 @@ import { Sun } from './sun';
 import { Planet } from './planet';
 
 export default class Universe {
-  spacing = 3900 / 30;
+  spacing = 3900 / 35;
   planets: Planet[] = [];
   rockets = {};
   rocketCounter = 0;
@@ -37,7 +37,7 @@ export default class Universe {
       25,
       25,
       this.spacing * 2.9,
-      800,
+      0,
       this.sun.mass,
       'assets/images/space-elements/mercurio.gif',
     );
@@ -49,7 +49,7 @@ export default class Universe {
       45,
       45,
       this.spacing * 3.5,
-      800,
+      0,
       this.sun.mass,
       'assets/images/space-elements/venus.gif',
     );
@@ -61,7 +61,7 @@ export default class Universe {
       55,
       55,
       this.spacing * 4.5,
-      800,
+      0,
       this.sun.mass,
       'assets/images/space-elements/slow-earth.gif',
     );
@@ -75,7 +75,7 @@ export default class Universe {
       40,
       40,
       this.spacing * 6,
-      800,
+      0,
       this.sun.mass,
       'assets/images/space-elements/marte.gif',
     );
@@ -89,7 +89,7 @@ export default class Universe {
       100,
       100,
       this.spacing * 8,
-      800,
+      0,
       this.sun.mass,
       'assets/images/space-elements/jupiter.gif',
     );
@@ -105,7 +105,7 @@ export default class Universe {
       220,
       220,
       this.spacing * 11,
-      800,
+      0,
       this.sun.mass,
       'assets/images/space-elements/saturno.gif',
     );
@@ -117,7 +117,7 @@ export default class Universe {
       80,
       80,
       this.spacing * 14,
-      800,
+      0,
       this.sun.mass,
       'assets/images/space-elements/urano.gif',
     );
@@ -129,7 +129,7 @@ export default class Universe {
       65,
       65,
       this.spacing * 16,
-      800,
+      0,
       this.sun.mass,
       'assets/images/space-elements/netuno.gif',
     );
