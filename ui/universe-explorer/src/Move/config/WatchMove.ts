@@ -28,8 +28,20 @@ export class WatchMove {
   updateMove(newX: number, newY: number) {
     this.position.vertical = newX;
     this.position.horizontal = newY;
-    this.character.style.top = this.position.vertical + speed.unit;
-    this.character.style.left = this.position.horizontal + speed.unit;
+    this.character
+      .animate(
+        [
+          {
+            top: this.position.vertical + speed.unit,
+            left: this.position.horizontal + speed.unit,
+          },
+        ],
+        {
+          duration: 80,
+        },
+      )
+      .commitStyles();
+
     this.updatePosition();
   }
   move(p: HTMLElement) {

@@ -68,8 +68,10 @@ export class Interactive {
         }
         let vertical = parseFloat(this.triggerElement.style.top.replace('px', ''));
         let horizontal = parseFloat(this.triggerElement.style.left.replace('px', ''));
+
         vertical += parseFloat(this.triggerElement.style.width.replace('px', '')) / 2;
         horizontal += parseFloat(this.triggerElement.style.height.replace('px', '')) / 2;
+
         this.control.updateMove(vertical - 75, horizontal - 75);
       }
 
@@ -121,18 +123,17 @@ export class Interactive {
     div.style.bottom = '3%';
     div.style.right = '5%';
     div.style.pointerEvents = 'none';
+    div.style.width = '50%';
     div.style.color = 'white';
-    div.style.fontSize = '30px';
   }
   watchDiscovery() {
     this.descovery = document.createElement('div') as HTMLElement;
-
+    this.descovery.classList.add('painel');
     this.descovery.style.position = 'fixed';
     this.descovery.style.top = '3%';
     this.descovery.style.left = '5%';
     this.descovery.style.pointerEvents = 'none';
     this.descovery.style.color = 'white';
-    this.descovery.style.fontSize = '30px';
 
     this.descovery.innerHTML = `
      <b>Você explorou 0 de ${this.alerts.length} corpos celestes</b>

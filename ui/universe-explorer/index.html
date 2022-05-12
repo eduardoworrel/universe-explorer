@@ -56,7 +56,7 @@
         }
         .locked{
             width: 30% !important;
-            height: 45% !important;
+            height: 30% !important;
             z-index: 9999 !important;
             border-radius: 10px !important;
             background: rgba(0, 0, 0, 0.91);
@@ -86,7 +86,6 @@
             margin: 12px;
             font-family: monospace;
             color: #dedeff;
-            font-size: 16px;
         }
         a.action {
             display: flex;
@@ -105,6 +104,9 @@
         .action img{
             width: 60px;
         }
+        .painel{
+                font-size: 30px;
+            }
         @media (max-width: 600px)
         {
             #realcontent{
@@ -113,6 +115,9 @@
             }
             .locked{
                 width: 83% !important;
+            }
+            .painel{
+                font-size: 18px !important;
             }
         }
     </style>
@@ -403,8 +408,8 @@
             </div>
         </div>
     </div>
-    <div id="days">
-        
+    <div class="painel" id="days">
+
     </div>
     <script src="dist/main.js"></script>
 </body>
