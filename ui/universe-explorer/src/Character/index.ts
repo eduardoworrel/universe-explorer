@@ -28,6 +28,5 @@ export default class Character {
           `,
     );
     this.character.scrollIntoView({ block: 'center', inline: 'center', behavior: 'auto' });
-  
   }
 }

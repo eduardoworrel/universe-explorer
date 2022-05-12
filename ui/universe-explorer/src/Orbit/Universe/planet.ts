@@ -1,6 +1,6 @@
 import { getAngSpeed } from './config/consts';
 import { Moon } from './moon';
-import {setAlertStyle} from '../../Interactive'
+import { Interactive, setAlertStyle } from '../../Interactive';
 export class Planet {
   name: any;
   widthFactor: any;
@@ -55,8 +55,10 @@ export class Planet {
     img.classList.add('trigger');
     img.setAttribute('show', name);
     this.element = img;
-    setAlertStyle(name,theImg)
+    setAlertStyle(name, theImg);
     setInterval(() => {
+      if (this.name === 'earth') Interactive.watchYears(this.angle);
+
       this.angle += this.angSpeed;
       this.x = (3900 - this.width) / 2 + Math.cos(this.angle) * this.radius;
       this.y = (3900 - this.height) / 2 - Math.sin(this.angle) * this.radius;
@@ -68,7 +70,7 @@ export class Planet {
     }, 50);
   }
   addMoon(largura: any, altura: any, angle: any, distancia: number) {
-    const moon = new Moon(this.name, largura, altura, angle, this.mass, distancia);
+    const moon = new Moon(this.name, largura, altura, angle, this.mass * 5, distancia);
     this.moons.push(moon);
     return moon.element;
   }

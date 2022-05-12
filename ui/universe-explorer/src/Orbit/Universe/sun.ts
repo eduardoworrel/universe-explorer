@@ -1,6 +1,5 @@
-
-import {setAlertStyle} from '../../Interactive'
-import {limit} from '../../Move/config/positions'
+import { setAlertStyle } from '../../Interactive';
+import { limit } from '../../Move/config/positions';
 export class Sun {
   width: number;
   height: number;
@@ -25,7 +24,7 @@ export class Sun {
     sunImg.style.left = `${this.x}px`;
     sunImg.style.top = `${this.y}px`;
     sunImg.style.position = 'absolute';
-    setAlertStyle('sun',sunImg.src)
+    setAlertStyle('sun', sunImg.src);
     this.element = sunImg;
   }
 }

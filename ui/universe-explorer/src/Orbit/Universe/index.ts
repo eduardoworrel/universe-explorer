@@ -38,7 +38,7 @@ export default class Universe {
       25,
       this.spacing * 2.9,
       0,
-      this.sun.mass,
+      this.sun.mass * 5,
       'assets/images/space-elements/mercurio.gif',
     );
     this.planets.push(planet);
@@ -70,15 +70,7 @@ export default class Universe {
     this.space.append(planet.element);
     this.space.append(planet.addMoon(10, 10, 800, this.spacing * 0.5));
 
-    planet = new Planet(
-      'marte',
-      40,
-      40,
-      this.spacing * 6,
-      0,
-      this.sun.mass,
-      'assets/images/space-elements/marte.gif',
-    );
+    planet = new Planet('marte', 40, 40, this.spacing * 6, 0, this.sun.mass, 'assets/images/space-elements/marte.gif');
     this.planets.push(planet);
     this.space.append(planet.element);
     this.space.append(planet.addMoon(7, 7, 50, this.spacing * 0.3));
@@ -112,15 +104,7 @@ export default class Universe {
     this.planets.push(planet);
     this.space.append(planet.element);
 
-    planet = new Planet(
-      'urano',
-      80,
-      80,
-      this.spacing * 14,
-      0,
-      this.sun.mass,
-      'assets/images/space-elements/urano.gif',
-    );
+    planet = new Planet('urano', 80, 80, this.spacing * 14, 0, this.sun.mass, 'assets/images/space-elements/urano.gif');
     this.planets.push(planet);
     this.space.append(planet.element);
 

@@ -1,17 +1,16 @@
 import { WatchMove } from '../Move/config/WatchMove';
 
-export function setAlertStyle(name: string, img: string){
-  let alert = document.querySelector(`#${name} .alert`)as HTMLElement;
-  alert.style.backgroundImage = `url('${img}')`
-  alert.style.backgroundSize = "100%";
-  alert.style.padding = "5px";
-  alert.style.width = '50%'
+export function setAlertStyle(name: string, img: string) {
+  const alert = document.querySelector(`#${name} .alert`) as HTMLElement;
+  alert.style.backgroundImage = `url('${img}')`;
+  alert.style.backgroundSize = '100%';
+  alert.style.padding = '5px';
+  alert.style.width = '50%';
   alert.style.height = '50%';
-  alert.style.margin = '0 auto'
-  alert.style.borderRadius = '50%'
+  alert.style.margin = '0 auto';
+  alert.style.borderRadius = '50%';
   alert.style.boxShadow = ' 0px 0px 25px 8px white';
   alert.style.backgroundColor = '#ffffffb3';
-
 }
 export class Interactive {
   interactiveContext = document.getElementById('interactive-content') as HTMLElement;
@@ -23,13 +22,13 @@ export class Interactive {
   lastInterval: any;
   triggerElement: HTMLElement;
   lockInterval: any;
-  visited :string[]= []
+  visited: string[] = [];
   descovery: HTMLElement;
   constructor(character: HTMLElement, control: WatchMove) {
     this.control = control;
     this.character = character;
 
-    this.watchDiscovery()
+    this.watchDiscovery();
   }
   start() {
     for (const close of Array.from(this.closes)) {
@@ -51,11 +50,11 @@ export class Interactive {
         (alert as HTMLElement).style.display = 'none';
         this.visible = 'lock';
         this.interactiveContext.classList.add('locked');
-        if(!this.visited.includes(alert.parentElement?.id as string)){
-          this.visited.push(alert.parentElement?.id as string)
+        if (!this.visited.includes(alert.parentElement?.id as string)) {
+          this.visited.push(alert.parentElement?.id as string);
         }
         this.descovery.innerHTML = `
-        <b>${this.visited.length}/${this.alerts.length}</b>
+        <b>Você explorou ${this.visited.length} de ${this.alerts.length} corpos celestes</b>
        `;
       });
     }
@@ -100,22 +99,45 @@ export class Interactive {
       }
     }, 20);
   }
-  watchDiscovery(){
-    
+  static watchYears(angle: number) {
+    const div = document.querySelector('#days') as HTMLElement;
+
+    const year = angle / 6.28;
+    const days = Math.floor(year * 365);
+
+    if (days > 365) {
+      div.innerHTML = `
+      <b>Você está aqui a ${days / 365 > 2 ? Math.floor(days / 365) + ' anos' : Math.floor(days / 365) + ' ano'} ${
+        days % 365 > 1 ? 'e ' + (days % 365) + ' dias' : ''
+      } </b>
+     `;
+    } else {
+      div.innerHTML = `
+      <b>Você está aqui a ${days} dias</b>
+     `;
+    }
+
+    div.style.position = 'fixed';
+    div.style.bottom = '3%';
+    div.style.right = '5%';
+    div.style.pointerEvents = 'none';
+    div.style.color = 'white';
+    div.style.fontSize = '30px';
+  }
+  watchDiscovery() {
     this.descovery = document.createElement('div') as HTMLElement;
 
     this.descovery.style.position = 'fixed';
-    this.descovery.style.bottom = '3%';
-    this.descovery.style.right = '5%';
+    this.descovery.style.top = '3%';
+    this.descovery.style.left = '5%';
     this.descovery.style.pointerEvents = 'none';
     this.descovery.style.color = 'white';
     this.descovery.style.fontSize = '30px';
 
     this.descovery.innerHTML = `
-     <b>0/${this.alerts.length}</b>
+     <b>Você explorou 0 de ${this.alerts.length} corpos celestes</b>
     `;
     document.body.append(this.descovery);
-  
   }
   showThat(triggerElement: HTMLElement) {
     if (this.visible === '') {

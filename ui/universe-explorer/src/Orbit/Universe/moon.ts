@@ -1,5 +1,5 @@
 import { getAngSpeed } from './config/consts';
-import {setAlertStyle} from '../../Interactive'
+import { setAlertStyle } from '../../Interactive';
 
 export class Moon {
   radius: any;
@@ -12,7 +12,14 @@ export class Moon {
   angle: any;
   angSpeed: any;
   mass: number;
-  constructor(contentName: string, widthFactor: any, heightFactor: any, angle: any, massReference: number, distancia: number) {
+  constructor(
+    contentName: string,
+    widthFactor: any,
+    heightFactor: any,
+    angle: any,
+    massReference: number,
+    distancia: number,
+  ) {
     this.angle = angle;
     this.angSpeed = getAngSpeed(distancia, massReference);
     this.width = widthFactor;
@@ -29,7 +36,7 @@ export class Moon {
     moon.style.position = 'absolute';
     moon.classList.add('trigger');
     moon.setAttribute('show', `moon-${contentName}`);
-    setAlertStyle(`moon-${contentName}`,this.moonImg)
+    setAlertStyle(`moon-${contentName}`, this.moonImg);
     this.element = moon;
   }
   update(x: any, y: any) {

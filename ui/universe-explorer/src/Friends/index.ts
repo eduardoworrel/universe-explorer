@@ -76,8 +76,8 @@ export default class Friends {
     span.id = personagem.id;
 
     span.style.position = 'absolute';
-    span.style.width = defaultSize.width* 0.7 + 'px';
-    span.style.height = defaultSize.height* 0.7 + 'px';
+    span.style.width = defaultSize.width * 0.7 + 'px';
+    span.style.height = defaultSize.height * 0.7 + 'px';
     span.style.left = personagem.x + 'px';
     span.style.top = personagem.y + 'px';
     span.style.opacity = '0.5';
