@@ -93,6 +93,21 @@ a.action {
     bottom: 10px;
     right: 10px;
 }
+#external-references{
+    position: fixed;
+    right: 20px;
+    top: 40px;
+}
+#me{
+    
+    width:40px;
+    border: 2px solid white;
+     height: 40px; 
+    border-radius: 50%;
+     background-image: url('https://eduardoworrel.com/eu22.jpeg');
+     background-size: 160%;
+     background-position: -10px;
+}
 .action img{
     width: 60px;
 }
