@@ -105,10 +105,13 @@
             width: 60px;
         }
         .painel{
-                font-size: 30px;
+                font-size: 30px !important;
             }
             #days{
                 text-align: right;
+            }
+            .legenda{
+                font-size: 20px;
             }
         @media (max-width: 600px)
         {
@@ -118,6 +121,9 @@
             }
             .locked{
                 width: 83% !important;
+            }
+            .legenda{
+                font-size: 16px;
             }
             .painel{
                 font-size: 18px !important;
@@ -415,6 +421,7 @@
 
     </div>
     <script>
+
         // disable zoom safari
         var lastTouchEnd = 0;
         document.addEventListener('touchend', function (event) {
@@ -427,6 +434,7 @@
         document.addEventListener('touchmove', function (event) {
             if (event.scale !== 1) { event.preventDefault(); }
         }, false)
+
     </script>
     <script src="dist/main.js"></script>
 </body>
