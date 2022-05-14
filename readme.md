@@ -12,8 +12,6 @@ Simulação do sistema solar
 ## Getting started
 
 ```
-cd ui/universe-explorer
-
 npm install
 
 npm run build
