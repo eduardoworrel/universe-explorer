@@ -1,6 +1,6 @@
-# universe explorer 
+# Universe Explorer 
 
-Simulação do sistema solar com interação simultanea em massa (Massive multiplayer)
+Simulação do sistema solar
 - Sem HTMLCanvas
 - Joystick na tela
 - Setas do teclado 
@@ -10,15 +10,7 @@ Simulação do sistema solar com interação simultanea em massa (Massive multip
 [&#9989; online](https://eduardoworrel.github.io/universe-explorer/ui/universe-explorer/)
 
 ## Getting started
-- Multiplayer Engine
-```
-cd web/realtime-engine-websocket
 
-pip install -r requirements.txt
-
-python3 app.py
-```
-- User Interface
 ```
 cd ui/universe-explorer
 
@@ -32,6 +24,6 @@ open index.html file on browser
 ## Órbitas
 - https://github.com/jpdevito/orbits/
 
-## base
+## Base
 - https://github.com/eduardoworrel/move-div-like-game
 
