@@ -53,21 +53,8 @@ export default class Friends {
     personagem: { id?: string; picture: any; y: any; x: any; nome?: string },
     inimigo: HTMLSpanElement,
   ) {
-    inimigo
-      .animate([{ left: personagem.x + 'px' }], {
-        duration: 1000,
-        iterations: 1,
-        fill: 'forwards',
-      })
-
-      .commitStyles();
-    inimigo
-      .animate([{ top: personagem.y + 'px' }], {
-        duration: 1000,
-        iterations: 1,
-        fill: 'forwards',
-      })
-      .commitStyles();
+    inimigo.style.left = personagem.x + 'px';
+    inimigo.style.top = personagem.y + 'px';
     // inimigo.style.backgroundImage =
     //   "url('https://i.pinimg.com/originals/a0/26/1b/a0261b885cfba5a65c675c33327acf5a.png')";
   }
