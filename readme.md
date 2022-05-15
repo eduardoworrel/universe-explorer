@@ -7,7 +7,7 @@ Simulação do sistema solar
 - Interação com elementos
 
 ## Status 
-[&#9989; online](https://eduardoworrel.github.io/universe-explorer/ui/universe-explorer/)
+[&#9989; online](https://eduardoworrel.github.io/universe-explorer/)
 
 ## Getting started
 
