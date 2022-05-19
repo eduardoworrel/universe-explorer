@@ -1,4 +1,5 @@
 # Universe Explorer 
+[![pages-build-deployment](https://github.com/eduardoworrel/universe-explorer/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/eduardoworrel/universe-explorer/actions/workflows/pages/pages-build-deployment)
 
 Simulação do sistema solar
 - Sem HTMLCanvas
