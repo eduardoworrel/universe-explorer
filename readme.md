@@ -3,8 +3,7 @@
 
 Simulação do sistema solar
 - Sem HTMLCanvas
-- Joystick na tela
-- Setas do teclado 
+- Joystick na tela e movimento por setas do teclado 
 - Interação com elementos
 
 ## Status 
